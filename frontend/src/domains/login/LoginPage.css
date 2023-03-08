@@ -1,0 +1,12 @@
+.container {
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+}
+
+.form-block {
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
