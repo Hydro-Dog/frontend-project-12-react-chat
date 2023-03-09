@@ -20,5 +20,6 @@ module.exports = {
     'import/prefer-default-export': 'off',
     'react/react-in-jsx-scope': 'off',
     'jsx-a11y/label-has-associated-control': 'off',
+    'import/no-extraneous-dependencies': 'off',
   },
 };
