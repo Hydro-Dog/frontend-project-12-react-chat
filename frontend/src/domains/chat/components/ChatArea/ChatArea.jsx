@@ -1,20 +1,19 @@
-import { useDispatch, useSelector } from 'react-redux';
-import { setActiveChatAction } from '../../../../store/actions';
+// @ts-nocheck
+import { useSelector } from 'react-redux';
+import './ChatArea.css';
+import { ChatAreaHeader } from '../ChatAreaHeader/ChatAreaHeader';
+import { ChatAreaInput } from '../ChatAreaInput/ChatAreaInput';
+import { ChatMessages } from '../ChatMessages/ChatMessages';
 
 export function ChatArea() {
   const activeChat = useSelector((state) => state.activeChat);
-  //   const dispatch = useDispatch();
 
   return (
-    <div className='chat-container'>
+    <div className="chat-area-container">
 
-      <h3>
-        #
-        {activeChat?.name}
-
-      </h3>
-
-      <div>activeChat.messages MESSAGES</div>
+      <ChatAreaHeader chatName={activeChat?.name} messagesCount="messagesCount" />
+      <ChatMessages />
+      <ChatAreaInput />
     </div>
   );
 }

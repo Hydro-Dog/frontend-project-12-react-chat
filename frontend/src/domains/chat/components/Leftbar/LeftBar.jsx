@@ -1,6 +1,9 @@
+// @ts-nocheck
 import { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
+import { Button } from '@mui/material';
 import { setActiveChatAction } from '../../../../store/actions';
+import './LeftBar.css';
 
 export function LeftBar() {
   const chatData = useSelector((state) => state.chatData);
@@ -18,12 +21,18 @@ export function LeftBar() {
   }, [chatData, activeChat]);
 
   return (
-    <div>
-      <h2>CHANNELS</h2>
-      <ul className="">
+    <div className="leftbar-container">
+      <div className="leftbar-header">
+        <h2 className="chats-list-title">CHANNELS</h2>
+        <Button>ADD</Button>
+      </div>
+      <ul className="chats-list">
         {chatData.channels?.map((item) => (
           <li key={item.id} className="chats-list-item">
-            <div onClick={() => onChatItemClick(item)}>{item.name}</div>
+            <div onClick={() => onChatItemClick(item)}>
+              #
+              {item.name}
+            </div>
             {item.removable && (
             <>
               <div>X</div>

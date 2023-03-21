@@ -1,3 +1,8 @@
 .header-container {
-    height: 5vh;
+    display: flex;
+    justify-content: end
+}
+
+.exit-button-container {
+    margin: 10px;
 }

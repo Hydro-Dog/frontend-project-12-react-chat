@@ -1,0 +1,28 @@
+.leftbar-container {
+    background-color: antiquewhite;
+    border-radius: 10px;
+    padding: 10px;
+}
+
+.leftbar-header {
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+    align-items: baseline;
+    gap:10px;
+}
+
+.chats-list-title {
+    margin-bottom: 10px;
+}
+
+.chats-list {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    
+}
+
+.chats-list-item {
+    cursor: pointer;
+}

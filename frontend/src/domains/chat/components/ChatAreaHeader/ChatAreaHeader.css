@@ -1,0 +1,7 @@
+.chat-area-header {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    border-bottom: 2px solid antiquewhite;
+    padding: 10px;
+}
