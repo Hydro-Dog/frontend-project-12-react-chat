@@ -31,10 +31,8 @@ export function LoginPage() {
           setAuthorized(true);
           localStorage.setItem('jwt', data.token);
         }).catch((err) => {
-          console.log(err.response.data.statusCode === 401);
           if (err.response.data.statusCode === 401) {
             const errors = { username: 'INVALID_USERNAME_OR_PASSWORD' };
-            console.error(err);
             return errors;
           }
           console.error(err);

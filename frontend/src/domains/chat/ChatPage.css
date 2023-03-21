@@ -1,0 +1,11 @@
+.container {
+    display: flex;
+    width: 100vw;
+    height: 95vh;
+    gap: 20px;
+}
+
+.chats-list-item {
+    display: flex;
+    gap: 5px;
+}
