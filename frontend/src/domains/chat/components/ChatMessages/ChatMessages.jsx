@@ -1,12 +1,23 @@
 // @ts-nocheck
 import './ChatMessages.css';
-import { Button, TextField } from '@mui/material';
+import { useSelector } from 'react-redux';
 
 export function ChatMessages() {
+  const messages = useSelector((state) => state.messages);
   return (
     <div className="chat-messages-container">
-      ChatMessages
 
+      {messages.map((item) => (
+        <div className="message-container">
+          <div>
+            username:
+            {item.username}
+          </div>
+          <div>
+            {item.body}
+          </div>
+        </div>
+      ))}
     </div>
   );
 }

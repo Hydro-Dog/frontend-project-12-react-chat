@@ -1,3 +1,3 @@
 import { createContext } from 'react';
 
-export const AppContext = createContext({ authorized: false, setAuthorized: null });
+export const AppContext = createContext({ authorized: false, setAuthorized: null, socket: null });

@@ -1,3 +1,4 @@
+// @ts-nocheck
 /* eslint-disable no-param-reassign */
 /* eslint-disable react/jsx-no-constructed-context-values */
 /* eslint-disable react/jsx-filename-extension */
@@ -7,14 +8,21 @@ import {
   Route,
   Routes,
 } from 'react-router-dom';
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import axios from 'axios';
+import { io } from 'socket.io-client';
 import { LoginPage } from './domains/login/LoginPage';
 import { ErrorPage } from './domains/error/notFound/ErrorPage';
 import { ProtectedRoute } from './utils/routes';
 import { AppContext } from './AppContext';
 import { ChatPage } from './domains/chat/ChatPage';
 import { AppLayout } from './components/AppLayout/AppLayout';
+
+const socket = io.connect('http://127.0.0.1:3000');
+
+socket.on('connect', () => {
+  console.log('socket.connected: ', socket.connected);
+});
 
 function App() {
   const [authorized, setAuthorized] = useState(!!localStorage.getItem('jwt'));
@@ -26,7 +34,7 @@ function App() {
   });
 
   return (
-    <AppContext.Provider value={{ authorized, setAuthorized }}>
+    <AppContext.Provider value={{ authorized, socket, setAuthorized }}>
       <BrowserRouter>
         <Routes>
           <Route element={<AppLayout />}>
